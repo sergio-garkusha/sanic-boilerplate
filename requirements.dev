@@ -1,0 +1,7 @@
+six
+mccabe
+isort
+lazy-object-proxy
+wrapt
+astroid
+pylint

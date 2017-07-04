@@ -1,2 +1,8 @@
+.DS_Store
+*.pyc
+*.pyo
+*.egg-info
 access.log
 error.log
+
+/env

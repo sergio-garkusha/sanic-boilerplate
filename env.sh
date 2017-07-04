@@ -1,23 +1,23 @@
 #!/bin/bash
 
-# Set the name of your project environment
-# That's the only thing you're have to change
-PROJECT_ENV="sanic_user"
+# Set the name of project environment
+# By comnvention it's an `env`
+PROJECT_ENV="env"
 
 echo "Current environment:"
 echo "$(conda info --envs | grep '*')"
 
-echo "Environment required by this project:"
+echo "Environment required by project:"
 echo "${PROJECT_ENV}"
-
-echo "Applying environment..."
 
 { # try
   source activate ${PROJECT_ENV} &&
 } || { # catch
-  conda create -n ${PROJECT_ENV} pip
-  echo "Environment ${PROJECT_ENV} was created successfully."
-  echo "Execute `source ./env.sh` again to switch the environment."
+  conda create -p ./${PROJECT_ENV} pip -y
 }
+
+echo "Activation shortcut:"
+echo "> source ./env.sh"
+echo "Name of current environment should appear in parenthesises."
 
 unset PROJECT_ENV
