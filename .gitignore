@@ -6,3 +6,4 @@ access.log
 error.log
 
 /env
+.env
